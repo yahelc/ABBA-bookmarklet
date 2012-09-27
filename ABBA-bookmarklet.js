@@ -11,10 +11,9 @@
 		if(window.abbaDispatchOnNext){
 			window.open(abba_url(abbaData));
 			this.removeEventListener('click', arguments.callee, true);
-			abbaDispatchOnNext = false;
-			abbaData = [];
+  			window.abbaData = [];
 		}
-		window.abbaDispatchOnNext = true;
+		window.abbaDispatchOnNext = !window.abbaDispatchOnNext;
 		window.abbaData = window.abbaData || [];
 		document.addEventListener("click", function(e){
 			var num = e.target.textContent.replace(/\D/g,'');
